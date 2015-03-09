@@ -120,10 +120,21 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\img\evilMan.PNG" />
-    <Content Include="Content\img\hardhat.PNG" />
+    <Content Include="Content\img\cal.png" />
+    <Content Include="Content\img\Columbus-ohio-skyline-panorama.jpg" />
+    <Content Include="Content\img\diable-plugin.PNG" />
+    <Content Include="Content\img\doc.png" />
+    <Content Include="Content\img\Download Button.png" />
+    <Content Include="Content\img\email.png" />
+    <Content Include="Content\img\evilman.jpg" />
+    <Content Include="Content\img\graph.png" />
+    <Content Include="Content\img\hardhat.jpg" />
+    <Content Include="Content\img\microsoft_partner_logo2.png" />
+    <Content Include="Content\img\prettylady.jpg" />
+    <Content Include="Content\img\qsi_logo.jpg" />
     <Content Include="Content\img\masthead.PNG" />
-    <Content Include="Content\img\prettyLady.PNG" />
+    <Content Include="Content\img\people.png" />
+    <Content Include="Content\img\windows-server-2012.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

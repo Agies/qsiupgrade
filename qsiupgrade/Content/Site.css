@@ -1,4 +1,5 @@
-﻿
+﻿@import url(http://fonts.googleapis.com/css?family=Nunito);
+
 body {
     padding-bottom: 20px;
     font-family: 'PT Sans', sans-serif;
@@ -23,19 +24,43 @@ h1 {
 img {
     width: 100%;
 }
+
+header {
+    margin: 10px 0px;
+}
+header img {
+    width: 250px;
+}
+footer {
+    height: 30px;
+    color: grey;
+    font-size: 90%;
+}
+footer p {
+    line-height: 35px;
+}
+footer img {
+    height: 30px;
+    width: 165px;
+}
+
+.future {
+    font-family: 'Nunito', sans-serif;
+}
+
 .row img {
-    max-width: 360px;
-    max-height: 180px;
+    /*max-width: 360px;*/
+    max-height: 200px;
 }
 
 .break {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .entry-form {
     position: absolute;
-    right: 97px;
-    top: -40px;
+    right: 40px;
+    top: -90px;
     z-index: 100;
     background: rgba(255,255,255, .9);
     padding: 10px;
@@ -56,7 +81,7 @@ img {
       box-shadow: 0px 0px 0px 0px #888888;
   }
 
-  .header-mast {
+  /*.header-mast {
       width: auto;
-  }
+  }*/
 }

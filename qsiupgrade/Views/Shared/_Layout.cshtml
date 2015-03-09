@@ -4,12 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QSI MBS</title>
+    <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     
                        @*/~\
-                        ( oo|     What a desolate
-                        _\=/_      place this is.
+                        ( oo|     
+                        _\=/_      
         ___            /  _  \
        /() \          //|/.\|\\
      _|_____|_       ||  \_/  ||
@@ -24,16 +25,20 @@
 <body>
     <div class="container body-content">
         <header>
-            <h1>Qsi</h1>
+            <img class="img-responsive" src="~/Content/img/qsi_logo.jpg" />
         </header>
         @RenderBody()
         <hr />
-        <footer>
-            <a href="https://quicksolutions.com">www.Quicksolutions.com</a>
-            614.825.8000
-            <div class="pull-right">
+        <footer class="row">
+            <p class="col-md-2">
+                <a href="https://quicksolutions.com">www.Quicksolutions.com</a>
+            </p>
+            <p class="col-md-2">614.825.8000</p>
+            <div class="col-md-2"><img src="~/Content/img/windows-server-2012.jpg" /></div>
+            <div class="col-md-2"><img src="~/Content/img/microsoft_partner_logo2.png" /></div>
+            <p class="col-md-4">
                 440 Polaris Pkwy. Site. 500, Westerville, OH 43082
-            </div>
+            </p>
         </footer>
     </div>
 

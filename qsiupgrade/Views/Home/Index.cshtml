@@ -2,7 +2,7 @@
     ViewBag.Title = "Home Page";
 }
 <div style="position: relative">
-    <img class="header-mast" src="~/Content/img/masthead.PNG"/>
+    <img class="header-mast" src="~/Content/img/masthead.PNG" />
     <div class="entry-form">
         <div class="enter-here">
             <form class="form-horizontal">
@@ -12,10 +12,10 @@
                 <div>Email Address*</div>
                 <input class="form-control" type="email" name="email" required=" " />
                 <div>Company Name</div>
-                <input class="form-control" type="text" name="company"  />
+                <input class="form-control" type="text" name="company" />
                 <div>Phone Number</div>
                 <input class="form-control" type="tel" name="phone" />
-                <input style="margin-top:10px;" type="submit" value="DOWNLOAD" class="btn btn-block btn-warning" />
+                <input style="margin-top:10px;" type="submit" value="SUBMIT" class="btn btn-block btn-warning" />
             </form>
         </div>
         <div class="thank-you" style="display: none;">
@@ -27,32 +27,40 @@
     </div>
 </div>
 
-<div class="row break">
+<div class="row break text-center">
     <div class="col-sm-4">
-        <img src="~/Content/img/hardhat.PNG" />
-        <h2>Increase Efficiency</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+        <img src="~/Content/img/hardhat.jpg" />
+        <h3>Reduce Operational Cost</h3>
+        <p class="text-muted">
+            By upgrading to Windows Server 2012 you will not only reduce operational costs, but also increase efficiencies and you will gain the ability to be cloud-ready.
         </p>
     </div>
     <div class="col-sm-4">
-        <img src="~/Content/img/evilMan.PNG" />
-        <h2>Support Demands</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <img src="~/Content/img/evilman.jpg" />
+        <h3>Maintain Compliance</h3>
+        <p class="text-muted">
+            Don't jeopardize corporate compliance by allowing an unsupported version of Windows in your data center. On July 15 compliance will no longer be attainable with a Windows 2003 server environment.
+        </p>
     </div>
     <div class="col-sm-4">
-        <img src="~/Content/img/prettyLady.PNG" />
-        <h2>Reduce Cost</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <img src="~/Content/img/prettylady.jpg" />
+        <h3>Improve Productivity</h3>
+        <p class="text-muted">
+            Upgrading to Windows Server 2012 will improve employee productivity, and give the ability to implement cost-effective backup and disaster recovery solutions.
+        </p>
+    </div>
+</div>
+<div class="row break">
+    <div class="col-lg-12 text-right future">
+        Worldwide, 57% of the installed base of x86 servers (a total of 13 million servers) are still running Windows Server 2003. With hundreds of new features in Windows Server 2012,
+        upgrading to the most modern version of Windows Server can deliver significant business benefits, efficiencies and drive customer relationships.
     </div>
 </div>
 
 @section scripts
 {
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             var form = $('.enter-here form');
             form.on('submit', function (event) {
                 event.preventDefault();
