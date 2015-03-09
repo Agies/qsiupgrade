@@ -1,0 +1,62 @@
+﻿
+body {
+    padding-bottom: 20px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+h1 {
+    font-family: 'PT Sans', sans-serif;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+img {
+    width: 100%;
+}
+.row img {
+    max-width: 360px;
+    max-height: 180px;
+}
+
+.break {
+    margin-top: 40px;
+}
+
+.entry-form {
+    position: absolute;
+    right: 97px;
+    top: -40px;
+    z-index: 100;
+    background: rgba(255,255,255, .9);
+    padding: 10px;
+    border: #888888 0px solid;
+    border-radius: 4px;
+    box-shadow: 0px 0px 20px 1px #888888;
+    min-height: 310px;
+    min-width: 290px;
+}
+
+@media (max-width: 990px) {
+  .entry-form {
+      position: inherit;
+      right: 0;
+      top: 0;
+      margin-top: 10px;
+      border-width: 0;
+      box-shadow: 0px 0px 0px 0px #888888;
+  }
+
+  .header-mast {
+      width: auto;
+  }
+}

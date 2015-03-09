@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div style="position: relative">
+    <img class="header-mast" src="~/Content/img/masthead.PNG"/>
+    <div class="entry-form">
+        <div class="enter-here">
+            <form class="form-horizontal">
+                <h3 style="margin-top: 0px;">Get the Free White Paper</h3>
+                <div>Your Name*</div>
+                <input class="form-control" type="text" name="name" required="" />
+                <div>Email Address*</div>
+                <input class="form-control" type="email" name="email" required=" " />
+                <div>Company Name</div>
+                <input class="form-control" type="text" name="company"  />
+                <div>Phone Number</div>
+                <input class="form-control" type="tel" name="phone" />
+                <input style="margin-top:10px;" type="submit" value="DOWNLOAD" class="btn btn-block btn-warning" />
+            </form>
+        </div>
+        <div class="thank-you" style="display: none;">
+            <h3 style="margin-top: 0px;">Thank you</h3>
+            <p>
+                The Free White Paper has been sent.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="row break">
+    <div class="col-sm-4">
+        <img src="~/Content/img/hardhat.PNG" />
+        <h2>Increase Efficiency</h2>
+        <p>
+            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+            enables a clean separation of concerns and gives you full control over markup
+            for enjoyable, agile development.
+        </p>
+    </div>
+    <div class="col-sm-4">
+        <img src="~/Content/img/evilMan.PNG" />
+        <h2>Support Demands</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+    </div>
+    <div class="col-sm-4">
+        <img src="~/Content/img/prettyLady.PNG" />
+        <h2>Reduce Cost</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+            var form = $('.enter-here form');
+            form.on('submit', function (event) {
+                event.preventDefault();
+                var codes = form.serialize();
+                $.post('/home?' + codes);
+                $('.enter-here').hide();
+                $('.thank-you').show();
+            });
+        });
+
+    </script>
+}
