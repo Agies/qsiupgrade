@@ -1,12 +1,20 @@
-﻿@import url(http://fonts.googleapis.com/css?family=Nunito);
-
-body {
+﻿body {
+    color: #2e3c52;
     padding-bottom: 20px;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
-h1 {
-    font-family: 'PT Sans', sans-serif;
+#unicorn {
+    z-index: 60;
+    position: absolute;
+    top: 150px;
+    left: 44%;
+    width: 110px;
+    display: block;
+}
+
+h1, h2, h3 {
+    font-family: 'Arial', sans-serif;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,6 +29,7 @@ h1 {
 .dl-horizontal dt {
     white-space: normal;
 }
+
 img {
     width: 100%;
 }
@@ -28,29 +37,28 @@ img {
 header {
     margin: 10px 0px;
 }
-header img {
-    width: 250px;
-}
+
+    header img {
+        width: 250px;
+    }
+
 footer {
     height: 30px;
     color: grey;
     font-size: 90%;
 }
-footer p {
-    line-height: 35px;
-}
-footer img {
-    height: 30px;
-    width: 165px;
-}
+
+    footer p {
+        line-height: 35px;
+    }
+
+    footer img {
+        height: 30px;
+        width: 165px;
+    }
 
 .future {
     font-family: 'Nunito', sans-serif;
-}
-
-.row img {
-    /*max-width: 360px;*/
-    max-height: 200px;
 }
 
 .break {
@@ -65,23 +73,32 @@ footer img {
     background: rgba(255,255,255, .9);
     padding: 10px;
     border: #888888 0px solid;
+    -ms-border-radius: 4px;
     border-radius: 4px;
+    -webkit-box-shadow: 0px 0px 20px 1px #888888;
+    -ms-box-shadow: 0px 0px 20px 1px #888888;
     box-shadow: 0px 0px 20px 1px #888888;
     min-height: 310px;
+    -moz-min-width: 290px;
+    -ms-min-width: 290px;
+    -o-min-width: 290px;
+    -webkit-min-width: 290px;
     min-width: 290px;
 }
 
 @media (max-width: 990px) {
-  .entry-form {
-      position: inherit;
-      right: 0;
-      top: 0;
-      margin-top: 10px;
-      border-width: 0;
-      box-shadow: 0px 0px 0px 0px #888888;
-  }
+    .entry-form {
+        position: inherit;
+        right: 0;
+        top: 0;
+        margin-top: 10px;
+        border-width: 0;
+        -webkit-box-shadow: 0px 0px 0px 0px #888888;
+        -ms-box-shadow: 0px 0px 0px 0px #888888;
+        box-shadow: 0px 0px 0px 0px #888888;
+    }
 
-  /*.header-mast {
+    /*.header-mast {
       width: auto;
   }*/
 }

@@ -7,22 +7,21 @@
     <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    
-                       @*/~\
-                        ( oo|     
-                        _\=/_      
-        ___            /  _  \
-       /() \          //|/.\|\\
-     _|_____|_       ||  \_/  ||
-    | | === | |      || |\ /| ||
-    |_|  O  |_|      #  \_ _/  #
-     ||  O  ||          | | |
-     ||__*__||          | | |
-    |~ \___/ ~|         []|[]
-    /=\ /=\ /=\         | | |
-    [_]_[_]_[_]________/_]_[_\_____________*@
 </head>
 <body>
+    @*                         /~\
+                            ( oo|
+                            _\=/_
+            ___            /  _  \
+           /() \          //|/.\|\\
+         _|_____|_       ||  \_/  ||
+        | | === | |      || |\ /| ||
+        |_|  O  |_|      #  \_ _/  #
+         ||  O  ||          | | |
+         ||__*__||          | | |
+        |~ \___/ ~|         []|[]
+        /=\ /=\ /=\         | | |
+        [_]_[_]_[_]________/_]_[_\_____________*@
     <div class="container body-content">
         <header>
             <img class="img-responsive" src="~/Content/img/qsi_logo.jpg" />
@@ -41,9 +40,21 @@
             </p>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
+    <script type='text/javascript' src='~/Scripts/easing.js'></script>
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script>
+        $(window).load(function() {
+            //$("#unicorn").css("left", $("#unicorn").position().left).circulate({
+            //    sizeAdjustment: 160,
+            //    speed: 2000,
+            //    width: -820,
+            //    height: 50,
+            //    loop: true,
+            //    zIndexValues: [-1, 50, 50, -1]
+            //});
+        })
+    </script>
 </body>
 </html>
