@@ -1,9 +1,13 @@
-﻿using System.Net.Mail;
+﻿using System;
+using System.Net;
+using System.Net.Mail;
+using System.Threading.Tasks;
 using System.Web.Mvc;
+using SendGrid;
 
 namespace qsiupgrade.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : AsyncController
     {
         private readonly EmailService _emailService;
 
@@ -19,9 +23,24 @@ namespace qsiupgrade.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(IndexModel model)
+        public async Task<ActionResult> Index(IndexModel model)
         {
-            _emailService.SendEmail(model.Email, model.Name, model.Company, model.Phone);
+            try
+            {
+                await _emailService.SendServerEmail(model.Email, model.Name, model.Company, model.Phone);
+            }
+            catch (Exception e)
+            {
+                
+            }
+            try
+            {
+                await _emailService.SendClientEmail(model.Email, model.Name, model.Company, model.Phone);
+            }
+            catch (Exception e)
+            {
+                
+            }
             return View();
         }
 
@@ -32,6 +51,7 @@ namespace qsiupgrade.Controllers
         private readonly string _from;
         private readonly string _subject;
         private readonly string _body;
+        private readonly string _serverBody;
         private readonly SmtpClient _smtp;
 
         public EmailService()
@@ -40,13 +60,40 @@ namespace qsiupgrade.Controllers
             _from = Microsoft.WindowsAzure.CloudConfigurationManager.GetSetting("from");
             _subject = Microsoft.WindowsAzure.CloudConfigurationManager.GetSetting("subject");
             _body = Microsoft.WindowsAzure.CloudConfigurationManager.GetSetting("body");
-            _smtp = new SmtpClient(server);
+            _serverBody = Microsoft.WindowsAzure.CloudConfigurationManager.GetSetting("serverBody");
+            _smtp = new SmtpClient(server)
+                    {
+                        Credentials = new NetworkCredential()
+                    };
         }
 
-        public void SendEmail(string to, string name, string company, string phone)
+        public Task SendClientEmail(string to, string name, string company, string phone)
         {
             var body = _body.Replace("{{Name}}", name);
-            _smtp.Send(_from, to, _subject, body);
+
+            var gridMessage = new SendGridMessage();
+            gridMessage.AddTo(to);
+            gridMessage.From = new MailAddress(_from);
+            gridMessage.Subject = _subject;
+            gridMessage.Text = body;
+            //gridMessage.Html = body;
+
+            var credentials = new NetworkCredential(
+                Microsoft.WindowsAzure.CloudConfigurationManager.GetSetting("Keys.Email.Account"),
+                Microsoft.WindowsAzure.CloudConfigurationManager.GetSetting("Keys.Email.Password")
+                );
+
+            var transportWeb = new Web(credentials);
+            return transportWeb.DeliverAsync(gridMessage);
+        }
+        public Task SendServerEmail(string to, string name, string company, string phone)
+        {
+            var body = _serverBody
+                .Replace("{{Name}}", name)
+                .Replace("{{Company}}", company)
+                .Replace("{{Email}}", to)
+                .Replace("{{Phone}}", phone);
+            return _smtp.SendMailAsync(to, _from, "Information Requested", body);
         }
     }
 
